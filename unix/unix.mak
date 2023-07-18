@@ -80,7 +80,7 @@ pcre:
 	    $(RANLIB) libpcre.a
 
 TF tf$(X):     $(OBJS) $(BUILDERS) $(PCRE)
-	$(CC) $(LDFLAGS) -o tf$(X) $(OBJS) $(LIBS) -lpcre
+	$(CC) $(LDFLAGS) -o tf$(X) $(OBJS) $(LIBS) -lpcre2-8
 #	@# Some stupid linkers return ok status even if they fail.
 	@test -f "tf$(X)"
 #	@# ULTRIX's sh errors here if strip isn't found, despite "true".

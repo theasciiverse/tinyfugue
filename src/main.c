@@ -38,6 +38,7 @@ static const char RCSid[] = "$Id: main.c,v 35004.115 2007/01/13 23:12:39 kkeys E
 #include "expand.h"
 #include "expr.h"
 #include "process.h"
+#include "malloc.h"
 
 const char sysname[] = UNAME;
 
@@ -76,6 +77,8 @@ int main(int argc, char *argv[])
     int worldflag = TRUE;
     int autologin = -1, quietlogin = -1, autovisual = TRUE;
     String *scratch;
+    char *pcre_version;
+    int pcre_version_length;
 
     puts("");
     puts(version);
@@ -161,7 +164,12 @@ int main(int argc, char *argv[])
     oputs("Type `/help copyright' for more information.");
     if (*contrib) oputs(contrib);
     if (*mods) oputs(mods);
-    oprintf("Using PCRE version %s", pcre_version());
+    pcre_version_length = pcre2_config(PCRE2_CONFIG_VERSION, NULL);
+    pcre_version = XMALLOC(pcre_version_length + 1);
+    pcre_version[0] = '\0';
+    pcre2_config(PCRE2_CONFIG_VERSION, pcre_version);
+    oprintf("Using PCRE version %s", pcre_version);
+    FREE(pcre_version);
     oputs("Type `/help', `/help topics', or `/help intro' for help.");
     oputs("Type `/quit' to quit tf.");
     oputs("");

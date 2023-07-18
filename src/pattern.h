@@ -10,14 +10,14 @@
 #ifndef PATTERN_H
 #define PATTERN_H
 
-#include "pcre-2.08/pcre.h"
+#define PCRE2_CODE_UNIT_WIDTH 8
+#include <pcre2.h>
 
 typedef struct RegInfo {
-    pcre *re;
-    pcre_extra *extra;
+    pcre2_code *re;
     conString *Str;
     int links;
-    int *ovector;
+    PCRE2_SIZE *ovector;
     int ovecsize;
 } RegInfo;
 
