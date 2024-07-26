@@ -2600,7 +2600,7 @@ static void handle_socket_lines(void)
 	    socks_with_lines--;
 
 	if (line->attrs & (F_TFPROMPT)) {
-	    incoming_text = line;
+	    incoming_text = (String *) line;
 	    handle_prompt(incoming_text, 0, TRUE);
 	    continue;
 	}
