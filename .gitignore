@@ -1,0 +1,5 @@
+/build/
+/stage/
+/dist/
+/pkg-test/
+/.static-libs/
