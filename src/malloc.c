@@ -8,6 +8,7 @@
 static const char RCSid[] = "$Id: malloc.c,v 35004.22 2007/01/13 23:12:39 kkeys Exp $";
 
 #include "tfconfig.h"
+#include <sys/types.h>  /* caddr_t; glibc pulls it in through other headers, musl does not */
 #include "port.h"
 #include "signals.h"
 #include "malloc.h"
