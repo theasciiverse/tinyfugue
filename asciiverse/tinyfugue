@@ -1,0 +1,7 @@
+#!/bin/sh
+# Starts TinyFugue from an av install: points TFLIBDIR at the tf-lib folder
+# next to this script (tf needs an absolute path there), then runs tf.
+# av links ~/.local/bin/tinyfugue to this file, so follow that link first.
+self=$(readlink "$0" 2>/dev/null || printf '%s' "$0")
+dir=$(cd "$(dirname "$self")" && pwd)
+TFLIBDIR="$dir/tf-lib" exec "$dir/tf" "$@"

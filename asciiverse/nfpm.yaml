@@ -1,0 +1,41 @@
+# System packages (.deb, .rpm, .apk, Arch) for TinyFugue, built by nfpm from
+# the same static binary as the av archive. The release workflow sets
+# VERSION, RELEASE (our packaging release) and ARCH (amd64 or arm64), and
+# puts the build in build/ (tf and tf-lib).
+#
+# No .desktop file on purpose: av is the one place titles are started from,
+# so Asciiverse packages never add menu entries (asciiverse/CLAUDE.md).
+#
+# tf looks for its macro library at /usr/share/tf-lib (compiled in). Debian's
+# own tf5 package installs tf5 and /usr/share/tf5, so the two can coexist.
+name: tinyfugue-asciiverse
+arch: ${ARCH}
+platform: linux
+version: ${VERSION}
+release: ${RELEASE}
+section: net
+priority: optional
+maintainer: Asciiverse <packages@asciiverse.sh>
+vendor: Asciiverse
+homepage: https://github.com/theasciiverse/tinyfugue
+license: GPL-2.0-or-later
+description: |
+  TinyFugue, the classic programmable MUD client.
+  Triggers, macros, hooks and a scripting language, several worlds at once.
+  TinyFugue 5.0 beta 8 by Ken Keys with Debian's patches, built statically
+  and packaged by Asciiverse.
+contents:
+  - src: build/tf
+    dst: /usr/bin/tf
+    file_info:
+      mode: 0755
+  - src: build/tf-lib
+    dst: /usr/share/tf-lib
+  - src: COPYING
+    dst: /usr/share/doc/tinyfugue-asciiverse/copyright
+    file_info:
+      mode: 0644
+  - src: README
+    dst: /usr/share/doc/tinyfugue-asciiverse/README
+    file_info:
+      mode: 0644
