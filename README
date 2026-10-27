@@ -1,3 +1,18 @@
+Play it with Asciiverse
+=======================
+
+With av, the Asciiverse client (https://asciiverse.sh):
+
+    av install tinyfugue
+    av play tinyfugue
+
+Or download the archive for your system from this repository's Releases,
+unpack it and run ./tinyfugue (tinyfugue.exe on Windows).
+
+The original README follows.
+
+------------------------------------------------------------------------
+
 
   TinyFugue is Copyright (C) 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2002, 2003, 2004, 2005, 2006-2007 Ken Keys.
 

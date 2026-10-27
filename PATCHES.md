@@ -23,6 +23,9 @@ for GCC 14. Tagged `debian/5.0b8-14`.
 - `src/malloc.c` includes `<sys/types.h>` for `caddr_t`. glibc declares it
   through headers port.h already pulls in; musl does not, so the static
   musl build failed. Worth offering to Debian.
+- **How to play it, at the top of README.** A short note on installing and
+  starting it with av, or from a release archive; the original text follows
+  unchanged.
 
 ## Packaging (new files)
 
