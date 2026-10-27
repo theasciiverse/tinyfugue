@@ -7,7 +7,7 @@ With av, the Asciiverse client (https://asciiverse.sh):
     av play tinyfugue
 
 Or download the archive for your system from this repository's Releases,
-unpack it and run ./tinyfugue (tinyfugue.exe on Windows).
+unpack it and run ./tinyfugue.
 
 The original README follows.
 
